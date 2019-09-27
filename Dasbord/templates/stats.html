@@ -1,0 +1,52 @@
+{% extends 'Layout.html' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12"><h1>Stats</h1></div>
+        <div class="col-md-6">
+        <h2>Mobil Dengan Horsepower Terbesar</h2>
+        <table class='table'>
+            <thead>
+            {% for item in data.head().columns %}
+                <th>{{item}}</th>
+            {% endfor %}
+    
+            </thead>
+            <tbody>
+            {% for index,item in data.head().iterrows() %} 
+                <tr>
+                    {% for col in item %}
+                    <td>{{col}}</td>
+                    {% endfor %}
+                </tr> 
+            {% endfor %}
+    
+            </tbody>
+        </table>
+        </div>
+        <div class="col-md-6">
+        <h2>Mobil Paling Irit</h2>
+        <table class='table'>
+            <thead>
+            {% for item in data1.head().columns %}
+                <th>{{item}}</th>
+            {% endfor %}
+    
+            </thead>
+            <tbody>
+            {% for index,item in data1.head().iterrows() %} 
+                <tr>
+                    {% for col in item %}
+                    <td>{{col}}</td>
+                    {% endfor %}
+                </tr> 
+            {% endfor %}
+    
+            </tbody>
+        </table>    
+        </div>
+    </div>
+
+
+{% endblock body %}
